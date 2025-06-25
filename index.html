@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Online Quiz Platform</title>
+  <link rel="stylesheet" href="styles.css" /> <!-- Link to CSS -->
+</head>
+<body>
+
+  <!-- === LOGIN SCREEN === -->
+<section id="loginScreen" class="screen">
+  
+  <!-- Page title displayed at the top of the login card -->
+  <h1 style="text-align: center;">Welcome To The Quiz</h1>
+  
+  <!-- Subtext providing brief instruction -->
+  <p style="text-align: center; color: #555;">Log in to begin your quiz</p>
+  
+  <!-- Login form container -->
+  <div class="login-box">
+
+    <!-- Username input field -->
+    <input type="text" id="username" placeholder="Username" />
+
+    <!-- Password input field -->
+    <input type="password" id="password" placeholder="Password" />
+
+    <!-- Submit button to log in -->
+    <button id="loginButton">Login</button>
+
+    <!-- Paragraph to show an error message if login fails -->
+    <p id="loginError" class="error"></p>
+
+  </div>
+
+</section>
+
+
+  <!-- === QUIZ LOBBY SCREEN === -->
+  <section id="quizLobby" class="screen hidden">
+    <h2>Welcome, <span id="userDisplay"></span> 👋</h2>
+    <p class="intro-text">You're about to take a timed quiz with 30 questions across:</p>
+    
+    <!-- Quiz subject breakdown -->
+    <ul class="quiz-details">
+      <li>📘 <strong>English Language</strong> – 10 questions</li>
+      <li>🧮 <strong>Mathematics</strong> – 10 questions</li>
+      <li>🌍 <strong>General Knowledge</strong> – 10 questions</li>
+    </ul>
+
+    <!-- Important note about the quiz -->
+    <p class="timer-note">
+      You’ll have <strong>45 minutes</strong> to complete the quiz. Once the timer starts, it can’t be paused. Good luck!
+    </p>
+
+    <!-- Start quiz button -->
+    <button id="startQuizButton">Start Quiz</button>
+  </section>
+
+  <!-- === QUIZ SCREEN === -->
+  <section id="quizScreen" class="screen hidden">
+    <div class="quiz-header">
+      <!-- Countdown timer -->
+      <div id="timer">Time Left: 45:00</div>
+      
+      <!-- Question progress -->
+      <div id="questionCounter">Question 1 of 30</div>
+    </div>
+
+    <!-- Dynamic question and options will appear here -->
+    <div id="questionArea"></div>
+
+    <!-- Navigation buttons -->
+<div class="quiz-controls">
+  <button id="prevBtn">Previous</button>
+  <button id="nextBtn">Next</button>
+  <button id="submitBtn" class="hidden">Submit Quiz</button>
+</div>
+  </section>
+
+  <!-- === RESULTS SCREEN === -->
+  <section id="resultScreen" class="screen hidden">
+    <h2>Quiz Completed ✅</h2>
+    
+    <!-- Display final score -->
+    <p id="scoreText"></p>
+    
+    <!-- Detailed breakdown of each question -->
+    <div id="resultBreakdown"></div>
+
+    <!-- Retake and logout options -->
+    <button id="retakeBtn">Retake Quiz</button>
+    <button id="logoutBtn">Logout</button>
+  </section>
+
+  <!-- Link to JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
